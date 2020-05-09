@@ -1,7 +1,7 @@
 """Test filter_columns node"""
 import unittest
 import pandas as pd
-from src.nodes.filter_columns import run
+from src.nodes.all import run
 
 DF = pd.DataFrame([{
     'col1': 1,
@@ -16,7 +16,6 @@ SETTINGS = {
         'col4',
         'col3',
     ],
-    'df': 'default',
 }
 
 

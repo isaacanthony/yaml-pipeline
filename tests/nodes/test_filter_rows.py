@@ -1,7 +1,7 @@
 """Test filter_rows node"""
 import unittest
 import pandas as pd
-from src.nodes.filter_rows import run
+from src.nodes.all import run
 
 DF = pd.DataFrame([
     {
@@ -12,18 +12,13 @@ DF = pd.DataFrame([
     },
 ])
 
-SETTINGS = {
-    'type': 'filter_rows',
-    'df': 'default',
-}
-
 
 def test_eq():
     """Test eq filter"""
     case = unittest.TestCase()
 
     settings = {
-        **SETTINGS,
+        'type': 'filter_rows',
         'column': 'id',
         'filter': 'eq',
         'value': 1,
