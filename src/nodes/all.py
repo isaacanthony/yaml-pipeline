@@ -3,6 +3,7 @@ from src.helpers import logger
 from src.nodes import \
     drop_columns, \
     filter_columns, \
+    filter_rows, \
     head, \
     read_csv, \
     rename_columns, \
@@ -14,6 +15,7 @@ LOG = logger.getLogger()
 NODES = {
     'drop_columns': drop_columns,
     'filter_columns': filter_columns,
+    'filter_rows': filter_rows,
     'head': head,
     'read_csv': read_csv,
     'rename_columns': rename_columns,

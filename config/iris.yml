@@ -23,5 +23,10 @@ nodes:
 
   - type: head
 
+  - type: filter_rows
+    column: y
+    filter: eq
+    value: setosa
+
   - type: to_csv
     path: data/interim/iris_preprocessed.csv
