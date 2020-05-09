@@ -11,7 +11,6 @@ from src.nodes import \
 
 LOG = logger.getLogger()
 
-
 NODES = {
     'drop_columns': drop_columns,
     'filter_columns': filter_columns,

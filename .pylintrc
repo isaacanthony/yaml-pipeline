@@ -1,0 +1,11 @@
+[BASIC]
+bad-names=dframe
+good-names=df
+
+[FORMAT]
+max-line-length = 100
+
+[MESSAGES CONTROL]
+disable=
+  import-error,
+  no-name-in-module,

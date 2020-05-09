@@ -1,5 +1,4 @@
 """df.rename(columns={})"""
-import pandas as pd
 
 
 def run(dfs: dict, settings: dict) -> dict:

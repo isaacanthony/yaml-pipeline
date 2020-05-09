@@ -3,8 +3,6 @@ nodes:
     description: download
     path: https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv
 
-  - type: head
-
   - type: rename_columns
     columns:
       species: y
@@ -22,11 +20,6 @@ nodes:
       - petal_length
 
   - type: head
-
-  - type: filter_rows
-    column: y
-    filter: eq
-    value: setosa
 
   - type: to_csv
     path: data/interim/iris_preprocessed.csv

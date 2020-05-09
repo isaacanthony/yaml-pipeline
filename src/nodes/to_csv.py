@@ -1,5 +1,4 @@
 """df.to_csv()"""
-import pandas as pd
 
 
 def run(dfs: dict, settings: dict) -> dict:
