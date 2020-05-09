@@ -8,7 +8,7 @@ def run(dfs: dict, settings: dict) -> dict:
         raise Exception('Missing path param')
 
     dfs[settings['df']] = pd.read_csv(
-        settings['path'],
+        settings['path_prefix'] + settings['path'],
         low_memory=False,
     )
 

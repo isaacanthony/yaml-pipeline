@@ -7,7 +7,7 @@ def run(dfs: dict, settings: dict) -> dict:
         raise Exception('Missing path param')
 
     dfs[settings['df']].to_csv(
-        settings['path'],
+        settings['path_prefix'] + settings['path'],
         index=False,
     )
 

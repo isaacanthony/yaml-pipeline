@@ -31,8 +31,8 @@ def _run(pipeline: str):
 
     dfs = {'default': None}
 
-    for node in settings['nodes']:
-        all_nodes.run(dfs, node)
+    for node in settings.pop('nodes', []):
+        all_nodes.run(dfs, {**settings, **node})
 
 
 if __name__ == '__main__':
