@@ -12,6 +12,7 @@ from src.nodes import \
     read_csv, \
     rename_columns, \
     rename_dataframes, \
+    set_value, \
     to_csv
 
 LOG = logger.getLogger()
@@ -28,6 +29,7 @@ NODES = {
     'read_csv': read_csv,
     'rename_columns': rename_columns,
     'rename_dataframes': rename_dataframes,
+    'set_value': set_value,
     'to_csv': to_csv,
 }
 
