@@ -6,6 +6,7 @@ from src.nodes import \
     filter_columns, \
     filter_rows, \
     head, \
+    merge, \
     read_csv, \
     rename_columns, \
     to_csv
@@ -18,6 +19,7 @@ NODES = {
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
     'head': head,
+    'merge': merge,
     'read_csv': read_csv,
     'rename_columns': rename_columns,
     'to_csv': to_csv,
