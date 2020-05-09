@@ -9,3 +9,6 @@ max-line-length = 100
 disable=
   import-error,
   no-name-in-module,
+
+[SIMILARITIES]
+min-similarity-lines = 20
