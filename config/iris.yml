@@ -9,6 +9,18 @@ nodes:
     columns:
       species: y
 
+  - type: filter_columns
+    columns:
+      - y
+      - petal_length
+      - petal_width
+      - sepal_length
+      - sepal_width
+
+  - type: drop_columns
+    columns:
+      - petal_length
+
   - type: head
 
   - type: to_csv

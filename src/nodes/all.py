@@ -1,6 +1,8 @@
 """Run any possible node"""
 from src.helpers import logger
 from src.nodes import \
+    drop_columns, \
+    filter_columns, \
     head, \
     read_csv, \
     rename_columns, \
@@ -10,6 +12,8 @@ LOG = logger.getLogger()
 
 
 NODES = {
+    'drop_columns': drop_columns,
+    'filter_columns': filter_columns,
     'head': head,
     'read_csv': read_csv,
     'rename_columns': rename_columns,

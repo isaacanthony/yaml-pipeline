@@ -1,9 +1,9 @@
-"""df.rename(columns={})"""
+"""df[{}]"""
 import pandas as pd
 
 
 def run(dfs: dict, settings: dict) -> dict:
-    """df.rename(columns={})"""
+    """df[{}]"""
     df = settings['df'] if 'df' in settings else 'default'
 
     if df not in dfs:
@@ -12,5 +12,5 @@ def run(dfs: dict, settings: dict) -> dict:
     if 'columns' not in settings:
         raise Exception('Missing columns param')
 
-    dfs[df] = dfs[df].rename(columns=settings['columns'])
+    dfs[df] = dfs[df][settings['columns']]
     return dfs

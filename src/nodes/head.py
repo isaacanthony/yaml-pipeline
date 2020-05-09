@@ -7,12 +7,10 @@ def run(dfs: dict, settings: dict) -> pd.DataFrame:
     df = settings['df'] if 'df' in settings else 'default'
 
     if df not in dfs:
-        raise Exception('No df specified')
-
-    df = dfs[df]
+        raise Exception('Missing df param')
 
     print()
-    print(df.head())
+    print(dfs[df].head())
     print()
 
     return dfs

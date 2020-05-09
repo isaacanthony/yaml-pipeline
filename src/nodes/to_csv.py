@@ -7,10 +7,10 @@ def run(dfs: dict, settings: dict) -> dict:
     df = settings['df'] if 'df' in settings else 'default'
 
     if df not in dfs:
-        raise Exception('No df specified')
+        raise Exception('Missing df param')
 
     if 'path' not in settings:
-        raise Exception('No path param')
+        raise Exception('Missing path param')
 
     dfs[df].to_csv(
         settings['path'],
