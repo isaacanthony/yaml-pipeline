@@ -17,6 +17,9 @@ def run(dfs: dict, settings: dict) -> dict:
     if fltr == 'contains':
         df = df[df[column].str.contains(value, regex=True)]
 
+    elif fltr == 'endswith':
+        df = df[df[column].str.endswith(value)]
+
     elif fltr == 'eq':
         df = df[df[column] == value]
 
@@ -42,11 +45,17 @@ def run(dfs: dict, settings: dict) -> dict:
     elif fltr == 'not.contains':
         df = df[~df[column].str.contains(value, regex=True)]
 
+    elif fltr == 'not.endswith':
+        df = df[~df[column].str.endswith(value)]
+
     elif fltr == 'not.eq':
         df = df[df[column] != value]
 
     elif fltr == 'not.in':
         df = df[~df[column].isin(set(value))]
+
+    elif fltr == 'not.startswith':
+        df = df[~df[column].str.startswith(value)]
 
     else:
         raise Exception('Invalid filter param')
