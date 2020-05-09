@@ -19,6 +19,10 @@ nodes:
     columns:
       - petal_length
 
+  - type: groupby
+    by: y
+    agg: mean
+
   - type: head
 
   - type: to_csv

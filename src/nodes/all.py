@@ -6,6 +6,7 @@ from src.nodes import \
     drop_dataframes, \
     filter_columns, \
     filter_rows, \
+    groupby, \
     head, \
     merge, \
     read_csv, \
@@ -21,6 +22,7 @@ NODES = {
     'drop_dataframes': drop_dataframes,
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
+    'groupby': groupby,
     'head': head,
     'merge': merge,
     'read_csv': read_csv,
