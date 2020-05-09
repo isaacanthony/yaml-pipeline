@@ -1,6 +1,7 @@
 """Run any possible node"""
 from src.helpers import logger
 from src.nodes import \
+    astype, \
     drop_columns, \
     filter_columns, \
     filter_rows, \
@@ -12,6 +13,7 @@ from src.nodes import \
 LOG = logger.getLogger()
 
 NODES = {
+    'astype': astype,
     'drop_columns': drop_columns,
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
