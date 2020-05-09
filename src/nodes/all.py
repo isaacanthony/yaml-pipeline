@@ -31,4 +31,9 @@ def run(dfs: dict, settings: dict) -> dict:
     else:
         LOG.info("Running %s node", settings['type'])
 
+    settings['df'] = settings['df'] if 'df' in settings else 'default'
+
+    if settings['df'] not in dfs:
+        raise Exception('Invalid df param')
+
     return NODES[settings['type']].run(dfs, settings)

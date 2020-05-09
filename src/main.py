@@ -29,7 +29,7 @@ def _run(pipeline: str):
     settings = safe_load(open('config/base.yml').read())
     settings.update(safe_load(open(f"config/{pipeline}.yml").read()))
 
-    dfs = {}
+    dfs = {'default': None}
 
     for node in settings['nodes']:
         all_nodes.run(dfs, node)
