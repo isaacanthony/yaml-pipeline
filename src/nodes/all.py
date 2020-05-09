@@ -2,7 +2,9 @@
 from src.helpers import logger
 from src.nodes import \
     head, \
-    read_csv
+    read_csv, \
+    rename_columns, \
+    to_csv
 
 LOG = logger.getLogger()
 
@@ -10,6 +12,8 @@ LOG = logger.getLogger()
 NODES = {
     'head': head,
     'read_csv': read_csv,
+    'rename_columns': rename_columns,
+    'to_csv': to_csv,
 }
 
 

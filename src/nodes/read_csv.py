@@ -8,5 +8,10 @@ def run(dfs: dict, settings: dict) -> dict:
         raise Exception('Missing path param')
 
     name = settings['name'] if 'name' in settings else 'default'
-    dfs[name] = pd.read_csv(settings['path'])
+
+    dfs[name] = pd.read_csv(
+        settings['path'],
+        low_memory=False,
+    )
+
     return dfs
