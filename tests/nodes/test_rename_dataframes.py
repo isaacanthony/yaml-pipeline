@@ -5,8 +5,12 @@ from src.nodes.all import run
 
 DFS = {
     'default': None,
-    'cars': pd.DataFrame([{'make': 'Toyota'}]),
-    'boats': pd.DataFrame([{'make': 'Bayliner'}])
+    'cars': pd.DataFrame([{
+        'make': 'Toyota',
+    }]),
+    'boats': pd.DataFrame([{
+        'make': 'Bayliner',
+    }]),
 }
 
 SETTINGS = {
@@ -14,7 +18,7 @@ SETTINGS = {
     'dfs': {
         'cars': 'cars_old',
         'boats': 'boats_old',
-    }
+    },
 }
 
 
@@ -26,5 +30,7 @@ def test_run():
 
     case.assertEqual(
         dfs['cars_old'].to_dict(orient='records'),
-        [{'make': 'Toyota'}],
+        [{
+            'make': 'Toyota',
+        }],
     )

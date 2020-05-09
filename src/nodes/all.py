@@ -3,6 +3,7 @@ from src.helpers import logger
 from src.nodes import \
     astype, \
     drop_columns, \
+    drop_dataframes, \
     filter_columns, \
     filter_rows, \
     head, \
@@ -17,6 +18,7 @@ LOG = logger.getLogger()
 NODES = {
     'astype': astype,
     'drop_columns': drop_columns,
+    'drop_dataframes': drop_dataframes,
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
     'head': head,
