@@ -11,7 +11,7 @@ DFS = {
 }
 
 SETTINGS = {
-    'steps': [
+    'nodes': [
         {
             'type': 'rename_columns',
             'columns': {

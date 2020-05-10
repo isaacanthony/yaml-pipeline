@@ -1,9 +1,7 @@
 """Main entrypoint"""
 from sys import argv
+import logging
 from yaml_pipeline import Pipelines
-from yaml_pipeline.helpers import logger
-
-LOG = logger.getLogger()
 
 
 def main():
@@ -14,13 +12,21 @@ def main():
 
     pipelines = Pipelines(
         'config/',
-        logger=LOG,
+        logger=_get_logger(),
         path_prefix='data/',
     )
 
     # Run pipelines
     for name in argv[1].split(','):
         pipelines.run(name)
+
+
+def _get_logger() -> logging.Logger:
+    """Logging wrapper"""
+    logging.basicConfig(format="%(asctime)s %(message)s")
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    return logger
 
 
 if __name__ == '__main__':

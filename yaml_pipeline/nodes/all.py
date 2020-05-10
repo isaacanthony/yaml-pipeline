@@ -1,5 +1,5 @@
-"""Run a step"""
-from yaml_pipeline.steps import \
+"""Run a node"""
+from yaml_pipeline.nodes import \
     astype, \
     drop_columns, \
     drop_dataframes, \
@@ -14,7 +14,7 @@ from yaml_pipeline.steps import \
     set_value, \
     to_csv
 
-STEPS = {
+NODES = {
     'astype': astype,
     'drop_columns': drop_columns,
     'drop_dataframes': drop_dataframes,
@@ -32,10 +32,10 @@ STEPS = {
 
 
 def run(dfs: dict, settings: dict) -> dict:
-    """Run a step"""
+    """Run a node"""
     settings['df'] = settings['df'] if 'df' in settings else 'default'
 
     if settings['df'] not in dfs:
         raise Exception('Invalid df param')
 
-    return STEPS[settings['type']].run(dfs, settings)
+    return NODES[settings['type']].run(dfs, settings)

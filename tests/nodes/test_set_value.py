@@ -1,7 +1,7 @@
-"""Test set_value step"""
+"""Test set_value node"""
 import unittest
 import pandas as pd
-from yaml_pipeline.steps.all import run
+from yaml_pipeline.nodes.all import run
 
 SETTINGS = {
     'type': 'set_value',

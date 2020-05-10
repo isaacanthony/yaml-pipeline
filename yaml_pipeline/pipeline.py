@@ -1,5 +1,5 @@
 """Pipeline wrapper"""
-from yaml_pipeline.steps.all import run
+from yaml_pipeline.nodes.all import run
 
 
 class Pipeline():
@@ -10,17 +10,17 @@ class Pipeline():
 
     def run(self) -> dict:
         """Run pipeline"""
-        # Run each step in pipeline
-        for step in self.settings['steps']:
-            if 'type' not in step:
+        # Run each node in pipeline
+        for node in self.settings['nodes']:
+            if 'type' not in node:
                 raise Exception('Missing type param')
 
             if 'logger' in self.settings:
-                if 'description' in step:
-                    self.settings['logger'].info("Running %s step", step['description'])
+                if 'description' in node:
+                    self.settings['logger'].info("Running %s", node['description'])
                 else:
-                    self.settings['logger'].info("Running %s step", step['type'])
+                    self.settings['logger'].info("Running %s", node['type'])
 
-            self.dfs = run(self.dfs, {**self.settings, **step})
+            self.dfs = run(self.dfs, {**self.settings, **node})
 
         return self.dfs

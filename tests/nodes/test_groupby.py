@@ -1,7 +1,7 @@
-"""Test groupby step"""
+"""Test groupby node"""
 import unittest
 import pandas as pd
-from yaml_pipeline.steps.all import run
+from yaml_pipeline.nodes.all import run
 
 DF = pd.DataFrame([
     {
