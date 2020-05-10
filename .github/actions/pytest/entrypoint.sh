@@ -1,2 +1,2 @@
 #!/bin/sh
-pip3 install . && pytest .
+pip3 install .['test'] && pytest .
