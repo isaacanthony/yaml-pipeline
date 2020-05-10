@@ -4,8 +4,8 @@ from yaml_pipeline.nodes.all import run
 
 class Pipeline():
     """Pipeline wrapper"""
-    def __init__(self, dfs: dict, settings: dict):
-        self.dfs = dfs
+    def __init__(self, settings: dict):
+        self.dfs = {'default': None}
         self.settings = settings
 
     def run(self) -> dict:

@@ -16,7 +16,6 @@ class Pipelines():
 
         # Import settings
         pipeline = safe_load(open(f"{self.yml_dir}{name}.yml").read())
-        dfs = {'default': None}
 
         # Run pipeline
-        return Pipeline(dfs, {**self.settings, **pipeline}).run()
+        return Pipeline({**self.settings, **pipeline}).run()

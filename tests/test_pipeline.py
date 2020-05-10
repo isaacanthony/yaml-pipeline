@@ -30,7 +30,9 @@ SETTINGS = {
 def test_run():
     """Test pipeline.run()"""
     case = unittest.TestCase()
-    df = Pipeline(DFS, SETTINGS).run()['default']
+    pipeline = Pipeline(SETTINGS)
+    pipeline.dfs = DFS
+    df = pipeline.run()['default']
 
     case.assertEqual(
         df.to_dict(orient='records'),
