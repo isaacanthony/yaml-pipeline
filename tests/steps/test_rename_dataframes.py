@@ -1,7 +1,7 @@
-"""Test rename_dataframes node"""
+"""Test rename_dataframes step"""
 import unittest
 import pandas as pd
-from yaml_pipeline.nodes.all import run
+from yaml_pipeline.steps.all import run
 
 DFS = {
     'default': None,

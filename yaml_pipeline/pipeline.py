@@ -1,7 +1,7 @@
 """Pipeline wrapper"""
 from yaml import safe_load
 from yaml_pipeline.helpers import logger
-from yaml_pipeline.nodes.all import run
+from yaml_pipeline.steps.all import run
 
 LOG = logger.getLogger()
 
@@ -21,15 +21,15 @@ class Pipeline():
         pipeline = safe_load(open(f"{self.yml_dir}{name}.yml").read())
         dfs = {'default': None}
 
-        # Run each node in pipeline
-        for node in pipeline['nodes']:
-            if 'type' not in node:
+        # Run each step in pipeline
+        for step in pipeline['steps']:
+            if 'type' not in step:
                 raise Exception('Missing type param')
 
             if self.settings['logging']:
-                if 'description' in node:
-                    LOG.info("Running %s node", node['description'])
+                if 'description' in step:
+                    LOG.info("Running %s step", step['description'])
                 else:
-                    LOG.info("Running %s node", node['type'])
+                    LOG.info("Running %s step", step['type'])
 
-            run(dfs, {**self.settings, **node})
+            run(dfs, {**self.settings, **step})

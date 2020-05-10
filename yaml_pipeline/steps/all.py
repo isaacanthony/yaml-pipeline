@@ -1,5 +1,5 @@
-"""Run any possible node"""
-from yaml_pipeline.nodes import \
+"""Run a step"""
+from yaml_pipeline.steps import \
     astype, \
     drop_columns, \
     drop_dataframes, \
@@ -32,7 +32,7 @@ NODES = {
 
 
 def run(dfs: dict, settings: dict) -> dict:
-    """Run a node"""
+    """Run a step"""
     settings['df'] = settings['df'] if 'df' in settings else 'default'
 
     if settings['df'] not in dfs:

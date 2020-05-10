@@ -1,7 +1,7 @@
-"""Test drop_dataframes node"""
+"""Test drop_dataframes step"""
 import unittest
 import pandas as pd
-from yaml_pipeline.nodes.all import run
+from yaml_pipeline.steps.all import run
 
 DFS = {
     'default': None,

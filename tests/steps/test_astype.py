@@ -1,7 +1,7 @@
-"""Test astype node"""
+"""Test astype step"""
 import unittest
 import pandas as pd
-from yaml_pipeline.nodes.all import run
+from yaml_pipeline.steps.all import run
 
 DF = pd.DataFrame([{'age': 51.0, 'height': '1.8'}])
 
