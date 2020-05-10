@@ -1,7 +1,7 @@
 """Test Pipeline class"""
 import unittest
 import pandas as pd
-from yaml_pipeline import Pipeline
+from yaml_pipeline.pipeline import Pipeline
 
 DFS = {
     'default': pd.DataFrame([{
