@@ -4,14 +4,17 @@
 # pylint: disable=too-many-branches
 def run(dfs: dict, settings: dict) -> dict:
     """df[df[{}] == {}]"""
-    for setting in ['filter', 'column', 'value']:
+    for setting in ['filter', 'column']:
         if setting not in settings:
             raise Exception(f"Missing {setting} param")
+
+    if 'null' not in settings['filter'] and 'value' not in settings:
+        raise Exception('Missing value param')
 
     df = dfs[settings['df']]
     column = settings['column']
     fltr = settings['filter']
-    value = settings['value']
+    value = settings['value'] if 'value' in settings else None
 
     # POSITIVE MATCHES
     if fltr == 'contains':
@@ -32,14 +35,17 @@ def run(dfs: dict, settings: dict) -> dict:
     elif fltr == 'in':
         df = df[df[column].isin(set(value))]
 
-    elif fltr == 'startswith':
-        df = df[df[column].str.startswith(value)]
-
     elif fltr == 'lt':
         df = df[df[column] < value]
 
     elif fltr == 'lte':
         df = df[df[column] <= value]
+
+    elif fltr == 'null':
+        df = df[df[column].isnull()]
+
+    elif fltr == 'startswith':
+        df = df[df[column].str.startswith(value)]
 
     # NEGATIVE MATCHES
     elif fltr == 'not.contains':
@@ -53,6 +59,9 @@ def run(dfs: dict, settings: dict) -> dict:
 
     elif fltr == 'not.in':
         df = df[~df[column].isin(set(value))]
+
+    elif fltr == 'not.null':
+        df = df[df[column].notnull()]
 
     elif fltr == 'not.startswith':
         df = df[~df[column].str.startswith(value)]
