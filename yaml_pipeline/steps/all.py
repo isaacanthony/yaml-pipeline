@@ -14,7 +14,7 @@ from yaml_pipeline.steps import \
     set_value, \
     to_csv
 
-NODES = {
+STEPS = {
     'astype': astype,
     'drop_columns': drop_columns,
     'drop_dataframes': drop_dataframes,
@@ -38,4 +38,4 @@ def run(dfs: dict, settings: dict) -> dict:
     if settings['df'] not in dfs:
         raise Exception('Invalid df param')
 
-    return NODES[settings['type']].run(dfs, settings)
+    return STEPS[settings['type']].run(dfs, settings)
