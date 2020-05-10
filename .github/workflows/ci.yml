@@ -1,0 +1,55 @@
+name: ci
+on: push
+
+jobs:
+  pylint:
+    name: pylint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: run pylint
+        uses: ./.github/actions/pylint
+        with:
+          args: . --rcfile=.pylintrc
+
+  pytest:
+    name: pytest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: run pytest
+        uses: ./.github/actions/pytest
+        with:
+          entrypoint: ./.github/actions/pytest/entrypoint.sh
+
+  sample-pipeline:
+    name: sample-pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: run sample pipeline
+        uses: ./.github/actions/sample-pipeline
+        with:
+          entrypoint: ./.github/actions/sample-pipeline/entrypoint.sh
+
+  yapf:
+    name: yapf
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: run yapf
+        uses: ./.github/actions/yapf
+        with:
+          args: --recursive --diff --style=.style.yapf .
