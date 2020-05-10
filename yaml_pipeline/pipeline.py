@@ -1,13 +1,13 @@
-"""Pipelines wrapper"""
+"""Pipeline wrapper"""
 from yaml import safe_load
-from src.helpers import logger
-from src.nodes.all import run
+from yaml_pipeline.helpers import logger
+from yaml_pipeline.nodes.all import run
 
 LOG = logger.getLogger()
 
 
-class Pipelines():
-    """Pipelines wrapper"""
+class Pipeline():
+    """Pipeline wrapper"""
     def __init__(self, yml_dir: str, **kwargs):  # pylint: disable=unused-argument
         self.yml_dir = yml_dir
         self.settings = locals()['kwargs']

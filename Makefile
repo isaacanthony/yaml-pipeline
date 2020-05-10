@@ -8,7 +8,7 @@ run:
 		-e PYTHONDONTWRITEBYTECODE=1 \
 		-it \
 		-v $(PWD):/src \
-		yaml-pipeline python3 src/main.py $(pipeline)
+		yaml-pipeline python3 -m yaml_pipeline.main $(pipeline)
 
 # TESTS
 test: test-pylint test-yapf test-pytest test-sample

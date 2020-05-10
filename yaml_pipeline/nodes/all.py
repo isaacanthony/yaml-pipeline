@@ -1,5 +1,5 @@
 """Run any possible node"""
-from src.nodes import \
+from yaml_pipeline.nodes import \
     astype, \
     drop_columns, \
     drop_dataframes, \

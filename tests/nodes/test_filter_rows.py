@@ -1,7 +1,7 @@
 """Test filter_rows node"""
 import unittest
 import pandas as pd
-from src.nodes.all import run
+from yaml_pipeline.nodes.all import run
 
 ALICE = [{'id': 1, 'name': 'Alice'}]
 BOB = [{'id': 2, 'name': 'Bob'}]

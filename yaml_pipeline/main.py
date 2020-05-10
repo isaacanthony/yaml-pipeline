@@ -1,6 +1,6 @@
 """Main entrypoint"""
 from sys import argv
-from src.pipelines import Pipelines
+from yaml_pipeline import Pipeline
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
     if len(argv) < 2:
         raise Exception('Missing pipeline parameter')
 
-    pipelines = Pipelines(
+    pipeline = Pipeline(
         'config/',
         logging=True,
         path_prefix='data/',
@@ -17,7 +17,7 @@ def main():
 
     # Run pipelines
     for name in argv[1].split(','):
-        pipelines.run(name)
+        pipeline.run(name)
 
 
 if __name__ == '__main__':
