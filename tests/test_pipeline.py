@@ -11,7 +11,7 @@ DFS = {
 }
 
 SETTINGS = {
-    'nodes': [
+    'yaml_pipeline': [
         {
             'type': 'rename_columns',
             'columns': {

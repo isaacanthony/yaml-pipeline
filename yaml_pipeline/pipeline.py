@@ -11,7 +11,7 @@ class Pipeline():
     def run(self) -> dict:
         """Run pipeline"""
         # Run each node in pipeline
-        for node in self.settings['nodes']:
+        for node in self.settings['yaml_pipeline']:
             if 'type' not in node:
                 raise Exception('Missing type param')
 
