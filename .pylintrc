@@ -9,6 +9,7 @@ max-line-length = 100
 disable=
   import-error,
   no-name-in-module,
+  too-few-public-methods,
 
 [SIMILARITIES]
 min-similarity-lines = 20

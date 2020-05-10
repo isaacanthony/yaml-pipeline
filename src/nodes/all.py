@@ -1,5 +1,4 @@
 """Run any possible node"""
-from src.helpers import logger
 from src.nodes import \
     astype, \
     drop_columns, \
@@ -14,8 +13,6 @@ from src.nodes import \
     rename_dataframes, \
     set_value, \
     to_csv
-
-LOG = logger.getLogger()
 
 NODES = {
     'astype': astype,
@@ -35,15 +32,7 @@ NODES = {
 
 
 def run(dfs: dict, settings: dict) -> dict:
-    """Run any possible node"""
-    if 'type' not in settings:
-        raise Exception('Missing type param')
-
-    if 'description' in settings:
-        LOG.info("Running %s node", settings['description'])
-    else:
-        LOG.info("Running %s node", settings['type'])
-
+    """Run a node"""
     settings['df'] = settings['df'] if 'df' in settings else 'default'
 
     if settings['df'] not in dfs:
