@@ -5,6 +5,7 @@ from yaml_pipeline.nodes import \
     download_s3, \
     drop_columns, \
     drop_dataframes, \
+    drop_duplicates, \
     filter_columns, \
     filter_rows, \
     groupby, \
@@ -24,6 +25,7 @@ NODES = {
     'download_s3': download_s3,
     'drop_columns': drop_columns,
     'drop_dataframes': drop_dataframes,
+    'drop_duplicates': drop_duplicates,
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
     'groupby': groupby,
