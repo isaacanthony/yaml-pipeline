@@ -12,6 +12,7 @@ from yaml_pipeline.nodes import \
     read_csv, \
     rename_columns, \
     rename_dataframes, \
+    round as round_columns, \
     set_value, \
     to_csv
 
@@ -28,6 +29,7 @@ NODES = {
     'read_csv': read_csv,
     'rename_columns': rename_columns,
     'rename_dataframes': rename_dataframes,
+    'round': round_columns,
     'set_value': set_value,
     'to_csv': to_csv,
 }
