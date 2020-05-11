@@ -6,6 +6,7 @@ from yaml_pipeline.nodes import \
     drop_columns, \
     drop_dataframes, \
     drop_duplicates, \
+    fillna, \
     filter_columns, \
     filter_rows, \
     groupby, \
@@ -26,6 +27,7 @@ NODES = {
     'drop_columns': drop_columns,
     'drop_dataframes': drop_dataframes,
     'drop_duplicates': drop_duplicates,
+    'fillna': fillna,
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
     'groupby': groupby,
