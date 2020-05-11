@@ -1,5 +1,5 @@
 """os.mkdir"""
-from os import mkdir
+from os import mkdir, path
 
 
 def run(dfs: dict, settings: dict) -> dict:
@@ -8,6 +8,7 @@ def run(dfs: dict, settings: dict) -> dict:
         raise Exception('Missing dirs param')
 
     for new_dir in settings['dirs']:
-        mkdir(settings['local_prefix'] + new_dir)
+        if not path.exists(settings['local_prefix'] + new_dir):
+            mkdir(settings['local_prefix'] + new_dir)
 
     return dfs
