@@ -27,6 +27,9 @@ def run(dfs: dict, settings: dict) -> dict:
     skip_if_exists = settings['skip_if_exists'] if 'skip_if_exists' in settings else False
 
     if skip_if_exists and path.exists(local_path):
+        if 'logger' in settings:
+            settings['logger'].info('File already downloaded')
+
         return dfs
 
     # Set credentials if exist
@@ -34,5 +37,10 @@ def run(dfs: dict, settings: dict) -> dict:
     secret = settings['aws_secret_access_key'] if 'aws_secret_access_key' in settings else None
 
     # Download
-    S3FileSystem(key=key, secret=secret).get(remote_path, local_path)
+    s3_client = S3FileSystem(key=key, secret=secret)
+
+    if 'logger' in settings:
+        settings['logger'].info(s3_client.du(remote_path))
+
+    s3_client.get(remote_path, local_path)
     return dfs
