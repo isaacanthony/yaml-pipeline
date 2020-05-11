@@ -8,7 +8,10 @@ def run(dfs: dict, settings: dict) -> dict:
         raise Exception('Missing dirs param')
 
     for new_dir in settings['dirs']:
-        if not path.exists(settings['local_prefix'] + new_dir):
+        if path.exists(settings['local_prefix'] + new_dir):
+            if 'logger' in settings:
+                settings['logger'].info("%s already exists", new_dir)
+        else:
             mkdir(settings['local_prefix'] + new_dir)
 
     return dfs

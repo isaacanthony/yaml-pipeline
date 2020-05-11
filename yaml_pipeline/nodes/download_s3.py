@@ -39,8 +39,25 @@ def run(dfs: dict, settings: dict) -> dict:
     # Download
     s3_client = S3FileSystem(key=key, secret=secret)
 
+    # Log file size if logging
     if 'logger' in settings:
-        settings['logger'].info(s3_client.du(remote_path))
+        file_size = s3_client.du(remote_path)
+        file_size = _file_size_to_str(file_size)
+        settings['logger'].info("File size is %s", file_size)
 
     s3_client.get(remote_path, local_path)
     return dfs
+
+
+def _file_size_to_str(file_size: int) -> str:
+    """File size int to str"""
+    if file_size >= 1e9:
+        return f"{round(file_size / 1e9, 1)}gb"
+
+    if file_size >= 1e6:
+        return f"{round(file_size / 1e6, 1)}mb"
+
+    if file_size >= 1e3:
+        return f"{round(file_size / 1e3, 1)}kb"
+
+    return f"{file_size}bytes"
