@@ -9,7 +9,6 @@ def run(dfs: dict, settings: dict) -> dict:
     dfs[settings['df']] = dfs[settings['df']].drop_duplicates(
         subset=subset,
         keep=keep,
-        ignore_index=True,
     )
 
     return dfs
