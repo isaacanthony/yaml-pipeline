@@ -10,6 +10,7 @@ from yaml_pipeline.nodes import \
     groupby, \
     head, \
     merge, \
+    mkdirs, \
     read_csv, \
     rename_columns, \
     rename_dataframes, \
@@ -28,6 +29,7 @@ NODES = {
     'groupby': groupby,
     'head': head,
     'merge': merge,
+    'mkdirs': mkdirs,
     'read_csv': read_csv,
     'rename_columns': rename_columns,
     'rename_dataframes': rename_dataframes,
