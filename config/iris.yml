@@ -2,7 +2,6 @@ yaml_pipeline:
   - type: read_csv
     description: download
     path: https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv
-    path_prefix: ''
 
   - type: rename_columns
     columns:

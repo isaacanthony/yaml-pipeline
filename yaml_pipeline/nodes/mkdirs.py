@@ -8,6 +8,6 @@ def run(dfs: dict, settings: dict) -> dict:
         raise Exception('Missing dirs param')
 
     for new_dir in settings['dirs']:
-        mkdir(settings['local_prefix'] + new_dir, exist_ok=True)
+        mkdir(settings['local_prefix'] + new_dir)
 
     return dfs

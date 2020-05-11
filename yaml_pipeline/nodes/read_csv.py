@@ -7,8 +7,10 @@ def run(dfs: dict, settings: dict) -> dict:
     if 'path' not in settings:
         raise Exception('Missing path param')
 
+    prefix = settings['local_prefix'] if 'local_prefix' in settings else ''
+
     dfs[settings['df']] = pd.read_csv(
-        settings['path_prefix'] + settings['path'],
+        prefix + settings['path'],
         low_memory=False,
     )
 
