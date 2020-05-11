@@ -2,6 +2,7 @@
 from yaml_pipeline.nodes import \
     astype, \
     copy_dataframes, \
+    download_s3, \
     drop_columns, \
     drop_dataframes, \
     filter_columns, \
@@ -19,6 +20,7 @@ from yaml_pipeline.nodes import \
 NODES = {
     'astype': astype,
     'copy_dataframes': copy_dataframes,
+    'download_s3': download_s3,
     'drop_columns': drop_columns,
     'drop_dataframes': drop_dataframes,
     'filter_columns': filter_columns,
