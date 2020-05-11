@@ -30,7 +30,7 @@ def run(dfs: dict, settings: dict) -> dict:
         return dfs
 
     # Set credentials if exist
-    key = settings['aws_access_key_id'] if 'access_key_id' in settings else None
+    key = settings['aws_access_key_id'] if 'aws_access_key_id' in settings else None
     secret = settings['aws_secret_access_key'] if 'aws_secret_access_key' in settings else None
 
     # Download
