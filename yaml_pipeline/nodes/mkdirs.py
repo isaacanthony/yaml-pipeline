@@ -10,7 +10,7 @@ def run(dfs: dict, settings: dict) -> dict:
     for new_dir in settings['dirs']:
         if path.exists(settings['local_prefix'] + new_dir):
             if 'logger' in settings:
-                settings['logger'].info("%s already exists", new_dir)
+                settings['logger'].info("Directory already exists (%s)", new_dir)
         else:
             mkdir(settings['local_prefix'] + new_dir)
 
