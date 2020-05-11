@@ -19,7 +19,7 @@ def run(dfs: dict, settings: dict) -> dict:
         remote_path = settings['remote_path']
 
     if 'local_prefix' in settings:
-        local_path = settings['local_prefix'] = settings['local_path']
+        local_path = settings['local_prefix'] + settings['local_path']
     else:
         local_path = settings['local_path']
 
