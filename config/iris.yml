@@ -27,3 +27,4 @@ yaml_pipeline:
 
   - type: to_csv
     path: interim/iris_preprocessed.csv
+    local_path_prefix: data/

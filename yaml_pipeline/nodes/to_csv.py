@@ -6,8 +6,10 @@ def run(dfs: dict, settings: dict) -> dict:
     if 'path' not in settings:
         raise Exception('Missing path param')
 
+    prefix = settings['local_path_prefix'] if 'local_path_prefix' in settings else ''
+
     dfs[settings['df']].to_csv(
-        settings['path_prefix'] + settings['path'],
+        prefix + settings['path'],
         index=False,
     )
 

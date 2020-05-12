@@ -13,13 +13,13 @@ def run(dfs: dict, settings: dict) -> dict:
             raise Exception(f"Missing {col} param")
 
     # Add prefixes
-    if 's3_prefix' in settings:
-        remote_path = settings['s3_prefix'] + settings['remote_path']
+    if 's3_path_prefix' in settings:
+        remote_path = settings['s3_path_prefix'] + settings['remote_path']
     else:
         remote_path = settings['remote_path']
 
-    if 'local_prefix' in settings:
-        local_path = settings['local_prefix'] + settings['local_path']
+    if 'local_path_prefix' in settings:
+        local_path = settings['local_path_prefix'] + settings['local_path']
     else:
         local_path = settings['local_path']
 

@@ -13,7 +13,6 @@ def main():
     pipelines = Pipelines(
         'config/',
         logger=_get_logger(),
-        path_prefix='data/',
     )
 
     # Run pipelines
