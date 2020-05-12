@@ -1,6 +1,7 @@
 """Run a node"""
 from yaml_pipeline.nodes import \
     astype, \
+    ceil, \
     copy_dataframes, \
     download_s3, \
     drop_columns, \
@@ -9,6 +10,7 @@ from yaml_pipeline.nodes import \
     fillna, \
     filter_columns, \
     filter_rows, \
+    floor, \
     groupby, \
     head, \
     merge, \
@@ -23,6 +25,7 @@ from yaml_pipeline.nodes import \
 
 NODES = {
     'astype': astype,
+    'ceil': ceil,
     'copy_dataframes': copy_dataframes,
     'download_s3': download_s3,
     'drop_columns': drop_columns,
@@ -32,6 +35,7 @@ NODES = {
     'filter_columns': filter_columns,
     'filter_rows': filter_rows,
     'groupby': groupby,
+    'floor': floor,
     'head': head,
     'merge': merge,
     'mkdirs': mkdirs,
