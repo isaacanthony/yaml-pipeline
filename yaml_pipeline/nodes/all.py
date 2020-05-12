@@ -14,6 +14,7 @@ from yaml_pipeline.nodes import \
     groupby, \
     head, \
     len as len_dataframe, \
+    list_columns, \
     merge, \
     mkdirs, \
     read_csv, \
@@ -39,6 +40,7 @@ NODES = {
     'floor': floor,
     'head': head,
     'len': len_dataframe,
+    'list_columns': list_columns,
     'merge': merge,
     'mkdirs': mkdirs,
     'read_csv': read_csv,
