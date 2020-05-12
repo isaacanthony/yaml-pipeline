@@ -17,7 +17,7 @@ class Pipeline():
 
             if 'logger' in self.settings:
                 if 'description' in node:
-                    self.settings['logger'].info("Running %s", node['description'])
+                    self.settings['logger'].info(node['description'])
                 else:
                     self.settings['logger'].info("Running %s", node['type'])
 
