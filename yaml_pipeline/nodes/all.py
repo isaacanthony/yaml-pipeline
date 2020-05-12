@@ -1,5 +1,6 @@
 """Run a node"""
 from yaml_pipeline.nodes import \
+    assert_true, \
     astype, \
     ceil, \
     copy_dataframes, \
@@ -26,6 +27,7 @@ from yaml_pipeline.nodes import \
     to_csv
 
 NODES = {
+    'assert': assert_true,
     'astype': astype,
     'ceil': ceil,
     'copy_dataframes': copy_dataframes,
