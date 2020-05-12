@@ -14,6 +14,7 @@ from yaml_pipeline.nodes import \
     merge, \
     mkdirs, \
     read_csv, \
+    read_excel, \
     rename_columns, \
     rename_dataframes, \
     round as round_columns, \
@@ -35,6 +36,7 @@ NODES = {
     'merge': merge,
     'mkdirs': mkdirs,
     'read_csv': read_csv,
+    'read_excel': read_excel,
     'rename_columns': rename_columns,
     'rename_dataframes': rename_dataframes,
     'round': round_columns,
